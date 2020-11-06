@@ -9,14 +9,13 @@ public class Login extends loginGUI implements InputMethodListener {
 
     private boolean event = false;
     
-    //    public void run() throws FileNotFoundException {
-//        Scanner scan = new Scanner(new File());
-//        Scanner keyboard = new Scanner (System.in);
-//        String pass = scan.nextLine(); // looks at selected file in scan
-//
-//        String inpUser = keyboard.nextLine();
-//        String inpPass = keyboard.nextLine(); // gets input from user
-    
+        public void run() throws FileNotFoundException {
+            Scanner keyboard = new Scanner(System.in);
+            String inpUser = keyboard.nextLine();
+            String inpPass = keyboard.nextLine(); // gets input from user
+
+        }
+
     @Override
     public void inputMethodTextChanged(InputMethodEvent event) {
         
@@ -39,7 +38,7 @@ public class Login extends loginGUI implements InputMethodListener {
 
     }
 
-    public void inputMethodTextChanged(JLabel success) {
-
-    }
+//    public void inputMethodTextChanged(JLabel success) {
+//
+//  }
 }
