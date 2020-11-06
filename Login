@@ -1,0 +1,45 @@
+import javax.swing.*;
+import java.awt.event.InputMethodEvent;
+import java.awt.event.InputMethodListener;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+public class Login extends loginGUI implements InputMethodListener {
+
+    private boolean event = false;
+    
+    //    public void run() throws FileNotFoundException {
+//        Scanner scan = new Scanner(new File());
+//        Scanner keyboard = new Scanner (System.in);
+//        String pass = scan.nextLine(); // looks at selected file in scan
+//
+//        String inpUser = keyboard.nextLine();
+//        String inpPass = keyboard.nextLine(); // gets input from user
+    
+    @Override
+    public void inputMethodTextChanged(InputMethodEvent event) {
+        
+        String user = userText.getText();
+        String pass = userPass.getText();
+
+        if(user.equals("User") && pass.equals("Password")){
+            success.setText("Login Successful!");
+            successMsg = success.getText();
+
+        }
+        else{
+            success.setText("Username or Password Incorrect. Please try again.");
+            successMsg = success.getText();
+        }
+    }
+
+    @Override
+    public void caretPositionChanged(InputMethodEvent event) {
+
+    }
+
+    public void inputMethodTextChanged(JLabel success) {
+
+    }
+}
