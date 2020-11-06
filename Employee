@@ -1,0 +1,14 @@
+
+
+public class Employee extends User {
+
+    private String employeeID;
+    private String position;
+
+
+    public void submitEventChangeRequest() {
+
+
+
+    }
+}
