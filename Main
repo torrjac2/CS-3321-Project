@@ -1,0 +1,23 @@
+import java.io.FileNotFoundException;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        loginGUI progGUI = new loginGUI();
+        progGUI.loginGUI();
+
+//        ToDoList TDL = new ToDoList();
+//        TDL.add();
+
+//        Login userLog = new Login();
+//        try {
+//            userLog.run();
+//        } catch (FileNotFoundException e) {
+//            e.printStackTrace();
+//        }
+
+    }
+
+
+}
