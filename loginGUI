@@ -27,7 +27,7 @@ public class GUI implements ActionListener {
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setVisible(true);
         window.add(space);
-
+        
         userLabel = new JLabel("User");
         userLabel.setBounds(150,250,80,25);
         space.add(userLabel);
