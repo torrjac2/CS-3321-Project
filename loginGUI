@@ -4,7 +4,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.InputMethodEvent;
 import java.io.FileNotFoundException;
 
-public class GUI implements ActionListener {
+public class loginGUI extends Calendar implements ActionListener {
 
     static JFrame window;
     static JPanel space;
@@ -17,7 +17,7 @@ public class GUI implements ActionListener {
 
     static String successMsg;
 
-    public void GUI(){
+    public void loginGUI(){
 
         space = new JPanel();
         space.setLayout(null);
@@ -27,7 +27,7 @@ public class GUI implements ActionListener {
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setVisible(true);
         window.add(space);
-        
+
         userLabel = new JLabel("User");
         userLabel.setBounds(150,250,80,25);
         space.add(userLabel);
@@ -48,19 +48,37 @@ public class GUI implements ActionListener {
 
         loginButton = new JButton("LOGIN");
         loginButton.setBounds(250,350,80,25);
-        loginButton.addActionListener(new GUI());
+        loginButton.addActionListener(new loginGUI());
         space.add(loginButton);
 
         success = new JLabel(successMsg);
         success.setBounds(250,375,300,25);
         space.add(success);
 
+        JLabel logo = new JLabel(new ImageIcon("C:\\Users\\jtj7d\\Documents\\ISU Stuff\\Info_CS\\3321\\CS Project\\Assets"));
+        logo.setBounds(250,20,150,150);
+        logo.setEnabled(true);
+        space.add(logo);
+
+
+
         window.setVisible(true);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        Login userLog = new Login();
-        userLog.inputMethodTextChanged(success);
+
+        String username = userText.getText();
+        String password = userPass.getText();
+        System.out.println("Success!");
+
+        if (username.equals("User") && password.equals("Password")){
+            calendarApp();
+            window.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+            window.dispose();
+        }
+        else{
+            System.out.println("Error.");
+        }
     }
 }
