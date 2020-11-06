@@ -1,0 +1,66 @@
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.InputMethodEvent;
+import java.io.FileNotFoundException;
+
+public class GUI implements ActionListener {
+
+    static JFrame window;
+    static JPanel space;
+    static JLabel userLabel;
+    static JTextField userText;
+    static JLabel passwordLabel;
+    static JPasswordField userPass;
+    static JButton loginButton;
+    static JLabel success;
+
+    static String successMsg;
+
+    public void GUI(){
+
+        space = new JPanel();
+        space.setLayout(null);
+
+        window = new JFrame();
+        window.setSize(600, 600);
+        window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        window.setVisible(true);
+        window.add(space);
+
+        userLabel = new JLabel("User");
+        userLabel.setBounds(150,250,80,25);
+        space.add(userLabel);
+
+        userText = new JTextField(20);
+        userText.setBounds(270,250,165,25);
+        userText.addInputMethodListener(new Login());
+        space.add(userText);
+
+        passwordLabel = new JLabel("Password");
+        passwordLabel.setBounds(150,300,80,25);
+        space.add(passwordLabel);
+
+        userPass = new JPasswordField();
+        userPass.setBounds(270,300,165,25);
+        userPass.addInputMethodListener(new Login());
+        space.add(userPass);
+
+        loginButton = new JButton("LOGIN");
+        loginButton.setBounds(250,350,80,25);
+        loginButton.addActionListener(new GUI());
+        space.add(loginButton);
+
+        success = new JLabel(successMsg);
+        success.setBounds(250,375,300,25);
+        space.add(success);
+
+        window.setVisible(true);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        Login userLog = new Login();
+        userLog.inputMethodTextChanged(success);
+    }
+}
