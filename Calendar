@@ -1,9 +1,10 @@
 import javax.swing.*;
-import javax.swing.event.*;
-import javax.swing.table.*;
+import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.DefaultTableModel;
 import java.awt.*;
-import java.awt.event.*;
-import java.util.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.GregorianCalendar;
 
 public class Calendar{
 
@@ -28,7 +29,7 @@ public class Calendar{
 
         //Prepare frame
         frmMain = new JFrame ("Mindloggers"); //Create frame
-        frmMain.setSize(850, 850); //Set size to 400x400 pixels
+        frmMain.setSize(850, 850); //Set size to 850x850 pixels
         pane = frmMain.getContentPane(); //Get content pane
         pane.setLayout(null); //Apply null layout
         frmMain.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //Close when X is clicked
@@ -40,7 +41,7 @@ public class Calendar{
         btnPrev = new JButton ("Prev");
         btnNext = new JButton ("Next");
         addEvent = new JButton("Add Event");
-        mtblCalendar = new DefaultTableModel(){public boolean isCellEditable(int rowIndex, int mColIndex){return false;}};
+        mtblCalendar = new DefaultTableModel(){public boolean isCellEditable(int rowIndex, int mColIndex){return true;}};
         tblCalendar = new JTable(mtblCalendar);
         stblCalendar = new JScrollPane(tblCalendar);
         pnlCalendar = new JPanel(null);
@@ -52,7 +53,7 @@ public class Calendar{
         btnPrev.addActionListener(new btnPrev_Action());
         btnNext.addActionListener(new btnNext_Action());
         cmbYear.addActionListener(new cmbYear_Action());
-        addEvent.addActionListener(new addEventToDay());
+        addEvent.addActionListener(new addEventToDay_Action());
 
         //Add controls to pane
         pane.add(pnlCalendar);
@@ -71,7 +72,7 @@ public class Calendar{
         cmbYear.setBounds(675, 605, 80, 20);
         btnPrev.setBounds(10, 25, 100, 25);
         btnNext.setBounds(660, 25, 100, 25);
-        addEvent.setBounds(450, 605, 100, 25);
+        addEvent.setBounds(450, 625, 150, 25);
         stblCalendar.setBounds(10, 50, 750, 700);
 
         //Make frame visible
@@ -126,6 +127,7 @@ public class Calendar{
         btnPrev.setEnabled(true);
         btnNext.setEnabled(true);
         addEvent.setEnabled(true);
+        addEvent.setVisible(true);
         if (month == 0 && year <= realYear-10){btnPrev.setEnabled(false);} //Too early
         if (month == 11 && year >= realYear+100){btnNext.setEnabled(false);} //Too late
         lblMonth.setText(months[month]); //Refresh the month label (at the top)
@@ -209,14 +211,11 @@ public class Calendar{
         }
     }
 
-    static class addEventToDay implements ActionListener{
+    static class addEventToDay_Action implements ActionListener{
         public void actionPerformed (ActionEvent e){
-
-//            event();
-
-
+            Event newEventAction = new Event();
+            newEventAction.Event();
         }
     }
-
-
 }
+
