@@ -1,4 +1,4 @@
-# CS-3321-Project
+# Mindloggers (Alpha 1.0.0 build)
 
 Mindloggers is a desktop calendar application written in Java. 
 
@@ -20,3 +20,4 @@ Building the Project:
 3) Import/Open the unpacked folder into desired IDE
 4) Build or run from the program
 
+*CS 3321 Project
