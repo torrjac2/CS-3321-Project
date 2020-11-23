@@ -6,29 +6,14 @@ public class User {
     private String email;
     private String loginStatus;
 
-    public void verifyLogin(){
+    public User(){}
 
+    public void verifyLogin(){}
 
+    public void register(){}
 
+    public void updateProfile(){}
 
-    }
-
-    public void register(){
-
-
-    }
-
-    public void updateProfile(){
-
-
-
-
-    }
-
-    public void createNewEvent(){
-
-
-    }
-
+    public void createNewEvent(){}
 }
 
