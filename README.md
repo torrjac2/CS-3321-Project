@@ -9,9 +9,9 @@ Features not yet implemented:
 
 Event editing.
 Calendar customization.
-Views other than the 5-week month view
+Views other than the 5-week month view.
 
-There is not a stable executable as of yet, so the project will need to be built using an IDE
+There is not a stable executable as of yet, so the project will need to be built using an IDE.
 
 Building the Project:
 
