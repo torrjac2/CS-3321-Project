@@ -1,0 +1,66 @@
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.InputMethodEvent;
+import java.awt.event.InputMethodListener;
+
+
+public class Event implements ActionListener, InputMethodListener {
+
+    static JFrame window;
+    static JPanel space;
+    static JLabel userLabel;
+    static JTextField userText;
+    static JButton createButton;
+    static JLabel success;
+
+    static String successMsg;
+
+    public void Event(){
+
+                space = new JPanel();
+                space.setLayout(null);
+
+                window = new JFrame();
+                window.setSize(600, 600);
+                window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                window.setVisible(true);
+                window.add(space);
+
+                userLabel = new JLabel("Enter New Event");
+                userLabel.setBounds(150,250,80,25);
+                space.add(userLabel);
+
+                userText = new JTextField(20);
+                userText.setBounds(270,250,165,25);
+                userText.addInputMethodListener(new Event());
+                space.add(userText);
+
+                createButton = new JButton("CREATE");
+                createButton.setBounds(250,350,80,25);
+                createButton.addActionListener(new Event());
+                space.add(createButton);
+
+                success = new JLabel(successMsg);
+                success.setBounds(250,375,300,25);
+                space.add(success);
+
+                window.setVisible(true);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+
+    }
+
+    @Override
+    public void inputMethodTextChanged(InputMethodEvent event) {
+
+    }
+
+    @Override
+    public void caretPositionChanged(InputMethodEvent event) {
+
+    }
+}
+
