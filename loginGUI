@@ -12,6 +12,7 @@ public class loginGUI extends Calendar implements ActionListener {
     static JPasswordField userPass;
     static JButton loginButton;
     static JLabel success;
+    static JLabel defaultCred;
 
     static String successMsg;
 
@@ -25,6 +26,10 @@ public class loginGUI extends Calendar implements ActionListener {
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setVisible(true);
         window.add(space);
+
+        defaultCred = new JLabel("Default Credentials: User: 'User'\n Password: 'Password' ");
+        defaultCred.setBounds(125,375,490,175);
+        space.add(defaultCred);
 
         userLabel = new JLabel("User");
         userLabel.setBounds(150,250,80,25);
@@ -54,8 +59,9 @@ public class loginGUI extends Calendar implements ActionListener {
         success.setEnabled(true);
         space.add(success);
 
-        JLabel logo = new JLabel(new ImageIcon("C:\\Users\\jtj7d\\Documents\\ISU Stuff\\Info_CS\\3321\\CS Project\\Assets"));
-        logo.setBounds(250,20,150,150);
+        ImageIcon icon = new ImageIcon("Logo Final.png");
+        JLabel logo = new JLabel(icon);
+        logo.setIcon(icon);
         logo.setEnabled(true);
         space.add(logo);
 
