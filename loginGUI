@@ -1,8 +1,6 @@
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.InputMethodEvent;
-import java.io.FileNotFoundException;
 
 public class loginGUI extends Calendar implements ActionListener {
 
@@ -53,14 +51,13 @@ public class loginGUI extends Calendar implements ActionListener {
 
         success = new JLabel(successMsg);
         success.setBounds(250,375,300,25);
+        success.setEnabled(true);
         space.add(success);
 
         JLabel logo = new JLabel(new ImageIcon("C:\\Users\\jtj7d\\Documents\\ISU Stuff\\Info_CS\\3321\\CS Project\\Assets"));
         logo.setBounds(250,20,150,150);
         logo.setEnabled(true);
         space.add(logo);
-
-
 
         window.setVisible(true);
     }
