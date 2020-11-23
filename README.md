@@ -2,7 +2,7 @@
 
 Mindloggers is a desktop calendar application written in Java. 
 
-Status
+Status:
 This is an alpha test release. There are some features not yet implemented.
 
 Features not yet implemented:
