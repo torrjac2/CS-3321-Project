@@ -1,4 +1,4 @@
-# Mindloggers (Pre-Alpha 1.0.0 build)
+# Mindloggers (Pre-Alpha 0.3.4 build)
 
 Mindloggers is a desktop calendar application written in Java. 
 
